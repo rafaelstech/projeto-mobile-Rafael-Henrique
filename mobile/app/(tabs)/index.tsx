@@ -1,11 +1,13 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
+import { Image, StyleSheet, Platform, Pressable } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
+  const router = useRouter();
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#fdfffe' }}
@@ -16,11 +18,24 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">inter</ThemedText>
-        <HelloWave />
+        <ThemedText type="title">R$ 110,00</ThemedText>
+
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">oi</ThemedText>
+      <Pressable
+  onPress={() => router.push('/explore')}
+  style={({ pressed }) => ({
+    backgroundColor: pressed ? '#0062CC' : '#007AFF', // Escurece quando pressionado
+    padding: 6,
+    borderRadius: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 38,
+    transform: pressed ? [{ scale: 0.95 }] : [{ scale: 1 }], // Efeito de "afundar"
+  })}
+>
+  <ThemedText style={{ color: 'white', fontWeight: 'bold' }}>PIX</ThemedText>
+</Pressable>
         <ThemedText>
            <ThemedText type="defaultSemiBold">oi</ThemedText> bbb
           <ThemedText type="defaultSemiBold">
