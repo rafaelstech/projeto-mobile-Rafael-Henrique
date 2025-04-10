@@ -5,6 +5,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useRouter } from 'expo-router';
 
+
 export default function HomeScreen() {
   const router = useRouter();
 
@@ -22,22 +23,22 @@ export default function HomeScreen() {
 
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-      <Pressable
-  onPress={() => router.push('/explore')}
-  style={({ pressed }) => ({
-    backgroundColor: pressed ? '#0062CC' : '#007AFF', // Escurece quando pressionado
-    padding: 6,
-    borderRadius: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 38,
-    transform: pressed ? [{ scale: 0.95 }] : [{ scale: 1 }], // Efeito de "afundar"
-  })}
->
-  <ThemedText style={{ color: 'white', fontWeight: 'bold' }}>PIX</ThemedText>
-</Pressable>
+        <Pressable
+          onPress={() => router.push('/explore')}
+          style={({ pressed }) => ({
+            backgroundColor: pressed ? '#fdfffe' : '#fdfffe', // Escurece quando pressionado
+            padding: 6,
+            borderRadius: 30,
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 38,
+            transform: pressed ? [{ scale: 0.95 }] : [{ scale: 1 }], // Efeito de "afundar"
+          })}
+        >
+          <ThemedText style={{ color: '', fontWeight: 'bold' }}>PIX</ThemedText>
+        </Pressable>
         <ThemedText>
-           <ThemedText type="defaultSemiBold">oi</ThemedText> bbb
+          <ThemedText type="defaultSemiBold">oi</ThemedText> bbb
           <ThemedText type="defaultSemiBold">
             {Platform.select({
               ios: 'cmd + d',
@@ -48,9 +49,9 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
+        <ThemedText type="subtitle">Step 2: .</ThemedText>
         <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
+          Tap the . tab to learn more about what's included in this starter app.
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
