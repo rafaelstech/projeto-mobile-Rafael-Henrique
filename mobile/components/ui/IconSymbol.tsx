@@ -22,7 +22,7 @@ const MAPPING = {
 >;
 
 export type IconSymbolName = keyof typeof MAPPING;
-
+<FontAwesome6 name="pix" size={24} color="black" />
 /**
  * An icon component that uses native SFSymbols on iOS, and MaterialIcons on Android and web. This ensures a consistent look across platforms, and optimal resource usage.
  *
@@ -40,5 +40,5 @@ export function IconSymbol({
   style?: StyleProp<ViewStyle>;
   weight?: SymbolWeight;
 }) {
-  return <MaterialIcons color={color} size={size} name={MAPPING[name]} style={style} />;
+  return <MaterialIcons color={color} size={size} name={MAPPING[name]} styles={style} />;
 }

@@ -4,7 +4,7 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useRouter } from 'expo-router';
-
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -31,37 +31,49 @@ export default function HomeScreen() {
             borderRadius: 30,
             alignItems: 'center',
             justifyContent: 'center',
-            width: 38,
+            width: 45,
             transform: pressed ? [{ scale: 0.95 }] : [{ scale: 1 }], // Efeito de "afundar"
           })}
         >
-          <ThemedText style={{ color: '', fontWeight: 'bold' }}>PIX</ThemedText>
+          <ThemedText style={{ color: 'orange', fontWeight: 'bold' }}>PIX</ThemedText>
+        </Pressable><Pressable
+          onPress={() => router.push('/explore')}
+          style={({ pressed }) => ({
+            backgroundColor: pressed ? '#fdfffe' : '#fdfffe', // Escurece quando pressionado
+            padding: 5,
+            borderRadius: 1000000,
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 100,
+            transform: pressed ? [{ scale: 0.95 }] : [{ scale: 1 }], // Efeito de "afundar"
+            left: 60,
+            bottom: 43,
+          })}
+        >
+          <ThemedText style={{ color: 'orange', fontWeight: 'bold' }}><FontAwesome6 name="barcode" size={24} color="black" /> Pagar</ThemedText>
         </Pressable>
         <ThemedText>
-          <ThemedText type="defaultSemiBold">oi</ThemedText> bbb
+          <ThemedText type="defaultSemiBold"></ThemedText>
           <ThemedText type="defaultSemiBold">
             {Platform.select({
               ios: 'cmd + d',
               android: 'cmd + m',
             })}
-          </ThemedText>{' '}
-          oi
+          </ThemedText>
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: .</ThemedText>
+        <ThemedText type="subtitle"></ThemedText>
         <ThemedText>
-          Tap the . tab to learn more about what's included in this starter app.
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
+        <ThemedText type="subtitle"></ThemedText>
         <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
+          <ThemedText type="defaultSemiBold"></ThemedText>
+          <ThemedText type="defaultSemiBold"></ThemedText>
+          <ThemedText type="defaultSemiBold"></ThemedText> 
+          <ThemedText type="defaultSemiBold"></ThemedText>
         </ThemedText>
       </ThemedView>
     </ParallaxScrollView>

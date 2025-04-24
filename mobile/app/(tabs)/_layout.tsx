@@ -7,10 +7,12 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { FontAwesome6 } from '@expo/vector-icons';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-
+<FontAwesome6 name="pix" size={24} color="black" />
   return (
     <Tabs
       screenOptions={{
@@ -30,14 +32,14 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'PAGINA INICIAL',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <AntDesign name="home" size={24} color="orange" />
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
           title: 'PIX',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <FontAwesome6 name="pix" size={24} color="orange" />
         }}
       />
     </Tabs>
